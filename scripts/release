@@ -1,0 +1,4 @@
+#!/bin/bash
+copytime=$(date +%Y%m%d%H%M%S)
+sudo mkdir /var/deploy/release/$copytime
+sudo mv /var/deploy/tmp* /var/deploy/release/$copytime/
