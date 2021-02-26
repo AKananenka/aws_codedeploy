@@ -1,10 +1,13 @@
 version: 0.0
 os: linux	
 files:	
-  - source: /index.html	  
-    destination: /var/www/html/	    
+  - source: /	  
+    destination: /var/deploy/tmp/	    
 hooks:	
-  BeforeInstall:	 
+  BeforeInstall:
+    - location: scripts/release  
+      timeout: 300	     
+      runas: root
     - location: scripts/install_dep   
       timeout: 300	     
       runas: root	     
